@@ -1,0 +1,190 @@
+/* Base styles and CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f5ff;
+    color: #444;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: linear-gradient(to bottom right, #f8f5ff, #e8f5ff);
+}
+
+/* Container layout */
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Header styling */
+header {
+    margin-bottom: 2.5rem;
+}
+
+h1 {
+    color: #6c5ce7;
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+.message {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Main content area */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Flower container styles */
+.flower-container {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Individual flower styles */
+.flower {
+    position: absolute;
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+}
+
+.flower.bloom {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Button container and button styling */
+.button-container {
+    margin: 1rem 0 2.5rem;
+}
+
+.bloom-button {
+    background-color: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+    outline: none;
+}
+
+.bloom-button:hover {
+    background-color: #5a49d8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(108, 92, 231, 0.3);
+}
+
+.bloom-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+}
+
+.bloom-button:disabled {
+    background-color: #b1aee3;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: #999;
+}
+
+/* Animation keyframes for various flower types */
+@keyframes sway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .message {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .flower-container {
+        height: 250px;
+    }
+    
+    .bloom-button {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .message {
+        font-size: 0.9rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .flower-container {
+        height: 200px;
+    }
+    
+    .bloom-button {
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+}
+
